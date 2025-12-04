@@ -10,8 +10,6 @@ A Symfony 7.4 REST API project featuring JWT authentication, product management,
 - [Database Setup](#database-setup)
 - [Running the Application](#running-the-application)
 - [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Docker Setup](#docker-setup)
 - [Project Structure](#project-structure)
 
 ## Requirements
@@ -73,7 +71,7 @@ A Symfony 7.4 REST API project featuring JWT authentication, product management,
 
 ## Database Setup
 
-1. **Create the database**:
+1. **Create the database** (not necessary if you are using SQLite):
    ```bash
    php bin/console doctrine:database:create
    ```
@@ -105,10 +103,6 @@ php -S localhost:8000 -t public/
 ```
 
 The API will be available at `http://localhost:8000`.
-
-### Production
-
-For production deployment, configure your web server (Apache/Nginx) to point to the `public/` directory.
 
 ## API Documentation
 
@@ -182,12 +176,6 @@ GET /products
 Authorization: Bearer <access_token>
 ```
 
-**Query Parameters**:
-- `category`: Filter by category ID
-- `minPrice`: Minimum price filter
-- `maxPrice`: Maximum price filter
-- `label`: Filter by product label (partial match)
-
 **Response**:
 ```json
 {
@@ -197,75 +185,99 @@ Authorization: Bearer <access_token>
       "label": "Product Name",
       "price": 29.99,
       "stock": 100,
-      "category": {
-        "id": 1,
-        "name": "Category Name"
-      },
       "createdAt": "2024-01-01T00:00:00+00:00",
-      "updatedAt": "2024-01-01T00:00:00+00:00"
+    },
+     {
+      "id": 2,
+      "label": "Product Name",
+      "price": 29.99,
+      "stock": 100,
+      "createdAt": "2024-01-01T00:00:00+00:00",
     }
   ]
 }
 ```
 
-## Testing
+#### Pagination and limit
+To get a paginated result, use the `cursor` and `limit` parameters.
+```http
+GET /products?cursor=5&limit=10
+Authorization: Bearer <access_token>
+```
+`cursor` is the first product id and `limit` is the number of product returned.
 
-Run the test suite using PHPUnit:
+#### Sorting
+To get a sorted result, use the `sort` paramter.
+```http
+GET /products?sort=stock,-price
+Authorization: Bearer <access_token>
+```
+These are the sortable fields : `'id', 'label', 'price', 'stock', 'createdAt'` (defined in `App\Model\ProductFilter::SORTABLE_FIELDS`)
+You can sort over multiple fields, separated by comma in order of sorting priority.
+Default sorting direction is ascending, you can also define descending direction by adding `-` before the field.
 
-```bash
-# Run all tests
-php bin/phpunit
-
-# Run tests with coverage
-php bin/phpunit --coverage-html coverage/
+#### Relations
+To add product relations to the result, use the `include` parameter.
+```http
+GET /products?include=category
+Authorization: Bearer <access_token>
 ```
 
-## Docker Setup
+**Response**
+```json
+{
+  "items": [
+    {
+      "id": 1,
+      "label": "Product Name",
+      "price": 29.99,
+      "stock": 100,
+      "createdAt": "2024-01-01T00:00:00+00:00",
+      "category": {
+        "label": "category1",
+        "description": "this is the first category"
+      }
+    },
+     {
+      "id": 2,
+      "label": "Product Name",
+      "price": 29.99,
+      "stock": 100,
+      "createdAt": "2024-01-01T00:00:00+00:00"
+      "category": {
+        "label": "category2",
+        "description": "this is the second category"
+      }
+    }
+  ]
+}
+```
 
-The project includes Docker Compose configuration for easy setup.
+#### Filtering
+To get a filtered result, use the parameters defined in `App\Model\ProductFilter::FILTER_LABELS` which are : `'category', 'price-lte', 'price-gte', 'price-lt', 'price-gt'`
+```http
+GET /products?category=category1&price-lt=200
+Authorization: Bearer <access_token>
+```
+This example returns the products of `category1` that have price which is lesser than `200`
 
-### Using Docker
-
-1. **Start the services**:
-   ```bash
-   docker-compose up -d
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   docker-compose exec php composer install
-   ```
-
-3. **Generate JWT keys**:
-   ```bash
-   docker-compose exec php php bin/console lexik:jwt:generate-keypair
-   ```
-
-4. **Setup database**:
-   ```bash
-   docker-compose exec php php bin/console doctrine:database:create
-   docker-compose exec php php bin/console doctrine:migrations:migrate
-   docker-compose exec php php bin/console doctrine:fixtures:load
-   ```
-
-### Docker Services
-
-- **Database**: PostgreSQL 16 (accessible on port 5432)
-  - Default credentials: `app` / `!ChangeMe!`
-  - Database name: `app`
+#### Field projection
+You can choose which fields are included in the result using the `fields` parameter
+```http
+GET /products?fields=label,stock
+Authorization: Bearer <access_token>
+```
+The available fields are : `'id', 'label', 'price', 'stock', 'createdAt'` (defined in `App\Model\ProductFilter::PROJECTABLE_FIELDS`)
 
 ## Project Structure
 
 ```
 tpApiAdvanced/
-├── assets/              # Frontend assets (Stimulus controllers, CSS)
 ├── bin/                 # Executable files (console, phpunit)
 ├── config/              # Application configuration
 │   ├── packages/        # Bundle configurations
 │   └── routes/          # Routing configuration
 ├── migrations/          # Database migrations
-├── public/              # Web root directory
-│   └── index.php        # Front controller
 ├── src/
 │   ├── Controller/      # HTTP controllers
 │   ├── DataFixtures/    # Database fixtures
@@ -273,49 +285,10 @@ tpApiAdvanced/
 │   ├── Model/           # Data models
 │   ├── Repository/      # Doctrine repositories
 │   └── Services/        # Business logic services
-├── templates/           # Twig templates
 ├── tests/               # Test files
-├── translations/        # Translation files
 └── var/                 # Cache, logs, and generated files
-```
-
-## Key Features
-
-- **JWT Authentication**: Secure token-based authentication with refresh tokens
-- **User Management**: User registration and authentication
-- **Product Management**: CRUD operations for products with filtering capabilities
-- **Category System**: Product categorization
-- **RESTful API**: Clean REST API design
-- **Doctrine ORM**: Database abstraction and entity management
-- **Symfony 7.4**: Latest Symfony framework features
-- **Docker Support**: Easy containerized deployment
-
-## Development
-
-### Clear Cache
-
-```bash
-php bin/console cache:clear
-```
-
-### Create a New Entity
-
-```bash
-php bin/console make:entity
-```
-
-### Create a Migration
-
-```bash
-php bin/console make:migration
-```
-
-### Debug Routes
-
-```bash
-php bin/console debug:router
 ```
 
 ## License
 
-This project is proprietary software.
+Do whatever you want
