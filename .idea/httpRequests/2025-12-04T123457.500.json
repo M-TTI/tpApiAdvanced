@@ -1,0 +1,204 @@
+{
+  "type": "https:\/\/tools.ietf.org\/html\/rfc2616#section-10",
+  "title": "An error occurred",
+  "status": 500,
+  "detail": "An exception occurred while executing a query: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: refresh_token.created_at",
+  "class": "Doctrine\\DBAL\\Exception\\NotNullConstraintViolationException",
+  "trace": [
+    {
+      "namespace": "",
+      "short_class": "",
+      "class": "",
+      "type": "",
+      "function": "",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/dbal\/src\/Driver\/API\/SQLite\/ExceptionConverter.php",
+      "line": 48,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\DBAL\\Driver\\API\\SQLite",
+      "short_class": "ExceptionConverter",
+      "class": "Doctrine\\DBAL\\Driver\\API\\SQLite\\ExceptionConverter",
+      "type": "->",
+      "function": "convert",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/dbal\/src\/Connection.php",
+      "line": 1456,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\DBAL",
+      "short_class": "Connection",
+      "class": "Doctrine\\DBAL\\Connection",
+      "type": "->",
+      "function": "handleDriverException",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/dbal\/src\/Connection.php",
+      "line": 1392,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\DBAL",
+      "short_class": "Connection",
+      "class": "Doctrine\\DBAL\\Connection",
+      "type": "->",
+      "function": "convertExceptionDuringQuery",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/dbal\/src\/Statement.php",
+      "line": 108,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\DBAL",
+      "short_class": "Statement",
+      "class": "Doctrine\\DBAL\\Statement",
+      "type": "->",
+      "function": "execute",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/dbal\/src\/Statement.php",
+      "line": 133,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\DBAL",
+      "short_class": "Statement",
+      "class": "Doctrine\\DBAL\\Statement",
+      "type": "->",
+      "function": "executeStatement",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/orm\/src\/Persisters\/Entity\/BasicEntityPersister.php",
+      "line": 253,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\ORM\\Persisters\\Entity",
+      "short_class": "BasicEntityPersister",
+      "class": "Doctrine\\ORM\\Persisters\\Entity\\BasicEntityPersister",
+      "type": "->",
+      "function": "executeInserts",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/orm\/src\/UnitOfWork.php",
+      "line": 1060,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\ORM",
+      "short_class": "UnitOfWork",
+      "class": "Doctrine\\ORM\\UnitOfWork",
+      "type": "->",
+      "function": "executeInserts",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/orm\/src\/UnitOfWork.php",
+      "line": 403,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\ORM",
+      "short_class": "UnitOfWork",
+      "class": "Doctrine\\ORM\\UnitOfWork",
+      "type": "->",
+      "function": "commit",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/doctrine\/orm\/src\/EntityManager.php",
+      "line": 268,
+      "args": []
+    },
+    {
+      "namespace": "Doctrine\\ORM",
+      "short_class": "EntityManager",
+      "class": "Doctrine\\ORM\\EntityManager",
+      "type": "->",
+      "function": "flush",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/src\/Repository\/RefreshTokenRepository.php",
+      "line": 26,
+      "args": []
+    },
+    {
+      "namespace": "App\\Repository",
+      "short_class": "RefreshTokenRepository",
+      "class": "App\\Repository\\RefreshTokenRepository",
+      "type": "->",
+      "function": "save",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/src\/Services\/TokenService.php",
+      "line": 48,
+      "args": []
+    },
+    {
+      "namespace": "App\\Services",
+      "short_class": "TokenService",
+      "class": "App\\Services\\TokenService",
+      "type": "->",
+      "function": "createRefreshToken",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/src\/Services\/TokenService.php",
+      "line": 60,
+      "args": []
+    },
+    {
+      "namespace": "App\\Services",
+      "short_class": "TokenService",
+      "class": "App\\Services\\TokenService",
+      "type": "->",
+      "function": "createTokenPair",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/src\/Controller\/LoginController.php",
+      "line": 43,
+      "args": []
+    },
+    {
+      "namespace": "App\\Controller",
+      "short_class": "LoginController",
+      "class": "App\\Controller\\LoginController",
+      "type": "->",
+      "function": "loginAction",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/symfony\/http-kernel\/HttpKernel.php",
+      "line": 183,
+      "args": []
+    },
+    {
+      "namespace": "Symfony\\Component\\HttpKernel",
+      "short_class": "HttpKernel",
+      "class": "Symfony\\Component\\HttpKernel\\HttpKernel",
+      "type": "->",
+      "function": "handleRaw",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/symfony\/http-kernel\/HttpKernel.php",
+      "line": 76,
+      "args": []
+    },
+    {
+      "namespace": "Symfony\\Component\\HttpKernel",
+      "short_class": "HttpKernel",
+      "class": "Symfony\\Component\\HttpKernel\\HttpKernel",
+      "type": "->",
+      "function": "handle",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/symfony\/http-kernel\/Kernel.php",
+      "line": 182,
+      "args": []
+    },
+    {
+      "namespace": "Symfony\\Component\\HttpKernel",
+      "short_class": "Kernel",
+      "class": "Symfony\\Component\\HttpKernel\\Kernel",
+      "type": "->",
+      "function": "handle",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/symfony\/runtime\/Runner\/Symfony\/HttpKernelRunner.php",
+      "line": 35,
+      "args": []
+    },
+    {
+      "namespace": "Symfony\\Component\\Runtime\\Runner\\Symfony",
+      "short_class": "HttpKernelRunner",
+      "class": "Symfony\\Component\\Runtime\\Runner\\Symfony\\HttpKernelRunner",
+      "type": "->",
+      "function": "run",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/autoload_runtime.php",
+      "line": 32,
+      "args": []
+    },
+    {
+      "namespace": "",
+      "short_class": "",
+      "class": "",
+      "type": "",
+      "function": "require_once",
+      "file": "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/public\/index.php",
+      "line": 5,
+      "args": [
+        [
+          "string",
+          "\/home\/mtti\/ynov\/dev-api\/tpApiAdvanced\/vendor\/autoload_runtime.php"
+        ]
+      ]
+    }
+  ]
+}

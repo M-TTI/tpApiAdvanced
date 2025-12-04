@@ -1,0 +1,244 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "label": "libero enim et",
+      "category": "this is the first category",
+      "price": 49.66,
+      "stock": 703930812,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 2,
+      "label": "porro omnis vitae",
+      "category": "this is the first category",
+      "price": 99.01,
+      "stock": 943097736,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 3,
+      "label": "magnam sit assumenda",
+      "category": "this is the first category",
+      "price": 47.33,
+      "stock": 547227830,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 4,
+      "label": "error sed magnam",
+      "category": "this is the first category",
+      "price": 60.64,
+      "stock": 7,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 5,
+      "label": "quia iure eum",
+      "category": "this is the first category",
+      "price": 61.32,
+      "stock": 7658,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 6,
+      "label": "quia occaecati molestias",
+      "category": "this is the first category",
+      "price": 55.64,
+      "stock": 3117,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 7,
+      "label": "commodi rerum vero",
+      "category": "this is the first category",
+      "price": 33.81,
+      "stock": 46156,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 8,
+      "label": "voluptates sed inventore",
+      "category": "this is the first category",
+      "price": 30.19,
+      "stock": 26,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 9,
+      "label": "rem impedit facere",
+      "category": "this is the first category",
+      "price": 54.23,
+      "stock": 740758,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 10,
+      "label": "ipsam aut iure",
+      "category": "this is the first category",
+      "price": 18.32,
+      "stock": 7128,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 11,
+      "label": "quia aut aperiam",
+      "category": "this is the second category",
+      "price": 61.92,
+      "stock": 3043122,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 12,
+      "label": "labore quae consequuntur",
+      "category": "this is the second category",
+      "price": 14.32,
+      "stock": 4,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 13,
+      "label": "fugit quis omnis",
+      "category": "this is the second category",
+      "price": 35.7,
+      "stock": 3,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 14,
+      "label": "accusantium dolorum at",
+      "category": "this is the second category",
+      "price": 71,
+      "stock": 877,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 15,
+      "label": "non dolore quia",
+      "category": "this is the second category",
+      "price": 33.98,
+      "stock": 75092577,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 16,
+      "label": "earum et facere",
+      "category": "this is the second category",
+      "price": 73.28,
+      "stock": 198,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 17,
+      "label": "et laboriosam aut",
+      "category": "this is the second category",
+      "price": 25.07,
+      "stock": 9555479,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 18,
+      "label": "occaecati voluptatem incidunt",
+      "category": "this is the second category",
+      "price": 59.3,
+      "stock": 29450109,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 19,
+      "label": "quae labore beatae",
+      "category": "this is the second category",
+      "price": 55.22,
+      "stock": 57709,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 20,
+      "label": "officia ut pariatur",
+      "category": "this is the second category",
+      "price": 9.33,
+      "stock": 7825,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 21,
+      "label": "dolorum doloribus sit",
+      "category": "this is the third category",
+      "price": 95.95,
+      "stock": 464174075,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 22,
+      "label": "fuga laborum unde",
+      "category": "this is the third category",
+      "price": 48.78,
+      "stock": 528,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 23,
+      "label": "eaque excepturi non",
+      "category": "this is the third category",
+      "price": 22.54,
+      "stock": 3349374,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 24,
+      "label": "minima quibusdam hic",
+      "category": "this is the third category",
+      "price": 23.57,
+      "stock": 4671656,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 25,
+      "label": "neque cumque ipsum",
+      "category": "this is the third category",
+      "price": 98.58,
+      "stock": 2,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 26,
+      "label": "quos eveniet illo",
+      "category": "this is the third category",
+      "price": 16.59,
+      "stock": 2012097,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 27,
+      "label": "omnis aut qui",
+      "category": "this is the third category",
+      "price": 49.41,
+      "stock": 8868400,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 28,
+      "label": "magnam numquam delectus",
+      "category": "this is the third category",
+      "price": 50.77,
+      "stock": 47629,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 29,
+      "label": "libero voluptate voluptatibus",
+      "category": "this is the third category",
+      "price": 75.47,
+      "stock": 5848483,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    },
+    {
+      "id": 30,
+      "label": "similique enim id",
+      "category": "this is the third category",
+      "price": 15.13,
+      "stock": 5,
+      "createdAt": "2025-12-03T11:31:40+00:00"
+    }
+  ]
+}

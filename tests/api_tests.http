@@ -1,0 +1,97 @@
+@hostAddress = http://127.0.0.1:8000
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjQ4NDgzMDgsImV4cCI6MTc2NDg0OTIwOCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXNlcjFAbWFpbC5jb20ifQ.nyipC15eiZ6oUXbMqNj-83ly2Ff2IPnRs1-8aMAKiKltBRPgW2XWLdl1h9puxhVhbyxszU9IxZtipof5IPIbKu_DT13KMgh5L4JVkvi3L0Uno2r3Ky_fKQ0nkk5xLA3Wujh01rxNCfG7I_E06JlVIGoJnBbs3iaKbt1nh0tQamt7BWQ8tPjDo81uX5AYvPSBqGyC9Gx-cPOG82oowzcZ4QJIb4qN_SvZ5WHPJvAtqjYnakcw9MRFCkfVdWadqSvG55pQeyfKyjN2lWplt-Kew30CS2jB7TwXo6lftPOGYUsDQ9UoJkFolUYv8flczMhebD2B_DOp-2Lhe-L7x8eomg
+
+# List
+GET {{hostAddress}}/products
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+# List with pagination
+GET {{hostAddress}}/products?cursor=4
+Accept: application/json
+
+###
+
+# List with limit
+GET {{hostAddress}}/products?cursor=4
+Accept: application/json
+
+###
+
+# List with pagination and limit
+GET {{hostAddress}}/products?cursor=4&limit=10&filter=
+Accept: application/json
+
+###
+
+# List with sort on stock ASC
+GET {{hostAddress}}/products?sort=stock
+Accept: application/json
+
+###
+
+# List with sort on stock DESC
+GET {{hostAddress}}/products?sort=-stock
+Accept: application/json
+
+###
+
+# List with sort on stock ASC then label DESC
+GET {{hostAddress}}/products?sort=stock,-label
+Accept: application/json
+
+###
+
+# List with fields projection
+GET {{hostAddress}}/products?fields=id,label
+Accept: application/json
+
+###
+
+# Login with valid credentials
+POST {{hostAddress}}/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "user1@mail.com",
+    "password" : "12345678"
+}
+
+###
+
+# Login with invalid email
+POST {{hostAddress}}/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "fushisgs",
+    "password" : "12345678"
+}
+
+###
+
+# Login with invalid password
+POST {{hostAddress}}/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "user1@mail.com",
+    "password" : "xdd"
+}
+
+###
+
+# Logout
+POST {{hostAddress}}/logout
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "refreshToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjQ4NDg5NjIsImV4cCI6MTc2NzQ0MDk2Miwic3ViIjoidXNlcjFAbWFpbC5jb20iLCJqdGkiOiIzNWFkNTRiNzVkYzVmMWE0NzMyZTY5ZDFjMGUzYzE3YSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ0eXBlIjoicmVmcmVzaF90b2tlbiIsInVzZXJuYW1lIjoidXNlcjFAbWFpbC5jb20ifQ.d3qdydYVkcwOZkbljvTsxoIGyGGnGg-ono7NItGvouPn65c3paiLGz8nDchMcYJ1o-M1fk22bFuXcLtQoP6bDOx9Q5H8WwMTe9E96eHeh4lwiBw3qEPM3_btftuY9vH30ULPJYmrmi7Xhw7RqO1nRVUpduLQeGoxDQyivDIuJlGnoXEPbwqYD-gdXnIg2J8fDmEuST2Sru5jtuqWAZFUC5wXroj2Xa9bwTQlV7E-cjlpPQrgRTcuAKYczelyyFmLWs3Hrao96mdPexrl4Ibe2cQL50xYM17IUkqNcNo9CYm95l6M1TnP6AQ1TqxV0V-Gc47arGOM8CJB814g-RLlXw"
+}

@@ -1,0 +1,9 @@
+{
+  "user": {
+    "id": 4,
+    "email": "user1@mail.com",
+    "password": "$2y$12$9JGSaaOB8GSoDvA1iexNA.SyMF95xDRSb3Bs6Dq7SRVnmub0SBhtS",
+    "createdAt": "2025-12-04T08:08:33+00:00",
+    "updatedAt": "2025-12-04T08:08:33+00:00"
+  }
+}
