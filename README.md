@@ -16,7 +16,7 @@ A Symfony 7.4 REST API project featuring JWT authentication, product management,
 
 ## Requirements
 
-- **PHP**: >= 8.2
+- **PHP**: >= 8.4
 - **Composer**: 2.x
 - **Database**: SQLite (default) or PostgreSQL
 - **Extensions**:
