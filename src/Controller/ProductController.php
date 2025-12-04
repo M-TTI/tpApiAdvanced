@@ -19,11 +19,7 @@ class ProductController extends AbstractController
         Request $request,
         ProductRepository $productRepository,
         ProductService $productService,
-        JWTTokenManagerInterface $tokenManager,
     ): JsonResponse {
-////        dd($request);
-//        dd($accessToken = $request->headers->get('Authorization'));
-////        dd($tokenManager->parse($accessToken));
         try {
             $productFilter = $productService->transformParamArrayToObject($request->query->all());
         } catch (\Exception $e) {
