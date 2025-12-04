@@ -62,3 +62,7 @@ composer.lock
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+
+###> Auto-generated files ###
+/config/reference.php
+###< Auto-generated files ###
